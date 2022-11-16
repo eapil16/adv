@@ -1,0 +1,281 @@
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: #000000;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+label {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+  text-rendering: optimizeSpeed;
+  line-height: 1.4;
+  justify-content: space-between;
+  color:#000;
+  font-size: 14px;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  transition: all 400ms ease-in-out;
+  &:hover {
+    transition: all 400ms ease-in-out;
+  }
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+%smooth {
+  transition: all 400ms ease-in-out;
+}
+
+a {
+  @extend %smooth;
+  &:hover {
+    text-decoration: none;
+    @extend %smooth;
+  }
+}
+
+.swiper-slide {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.swiper-button {
+  &-prev, &-next {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.fancybox-inner {
+  video {
+    width: auto;
+    max-width: 100%;
+    height: 86%;
+    object-fit: cover;
+  }
+}
+.fancybox-slide > * {
+  background-color: #000;
+}
+.fancybox-button svg path {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.fancybox-infobar {
+  color: #fff;
+}
+.fancybox-toolbar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.videos {
+  &-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-btn {
+      width: 136px;
+      height: 136px;
+      position: absolute;
+      top: calc(50% - 68px);
+      left: calc(50% - 68px);
+      z-index: 10;
+      cursor: pointer;
+      img {
+        width: 136px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.vc_column-inner {
+  position: relative;
+}
+
+.button-to-video {
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  background: #A23330;
+  width: 317px;
+  height: 90px;
+  justify-content: center;
+  transition: all 400ms ease-in-out;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 15;
+  img {
+    width: 42px;
+    margin: 0 30px 0 0;
+  }  
+  span {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    transition: all 400ms ease-in-out;
+  }
+  &:hover {
+    background: #6D1B19;
+    transition: all 400ms ease-in-out;
+    span {
+      color: #fff;
+      transition: all 400ms ease-in-out;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .videos {
+    &-item {
+     .video-btn {
+        width: 90px;
+        height: 90px;
+        top: calc(50% - 45px);
+        left: calc(50% - 45px);
+        img {
+          width: 90px;
+        }
+      }
+    }
+  }
+  .button-to-video {
+    padding: 10px 15px;
+    width: 260px;
+    height: 80px;
+    img {
+      width: 30px;
+      margin: 0 15px 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .videos {
+    &-item {
+      .video-btn {
+        width: 70px;
+        height: 70px;
+        top: calc(50% - 35px);
+        left: calc(50% - 35px);
+        img {
+          width: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .videos {
+    &-item {
+      .video-btn {
+        width: 50px;
+        height: 50px;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+  .button-to-video {
+    padding: 10px;
+    width: 180px;
+    height: 60px;
+    img {
+      width: 16px;
+      margin: 0 15px 0 0;
+    }
+    span {
+      font-size: 15px;
+      line-height: 15px;
+    }
+  }
+}
+
